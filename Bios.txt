@@ -1,2 +1,5 @@
 Jon Chapman-
 I am currently a junior at Missouri Western State University. I am studying computer science and have coded in Java, Python, Html, JavaScript, and Cobol.
+
+Riley McNeely-
+I'm a computer science major at Missouri Western State University, with experience in Java, Python, HTML, Javascript and C.
