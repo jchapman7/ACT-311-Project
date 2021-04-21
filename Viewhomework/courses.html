@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>courses</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+      .flag,.seal {
+        width: 125px;
+        padding: 10px;
+      }
+      .center {
+        text-align: center;
+      }
+      table,
+      tr,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Courses by title</h1>
+    <hr />
+    <div id="appArea">
+    <div>
+        <label>Type a Title:</label>
+        <p><button onclick="bytitle()">Sort by Title</button></p>
+        <input type="text" v-model="picked" v-on:input="lower">
+        "{{ picked }}" 
+    </div>
+    <table>
+        <tr>
+            <th>CRN</th>
+            <th>Course ID</th>
+            <th>Section</th>
+            <th>Title</th>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Format</th>
+            <th>Instructor</th>
+            <th>Credit Hours</th>
+            <th>Max Enrollment</th>
+            <th>Seats Available</th>
+            <th>Begin Date</th>
+            <th>End Date</th>
+        </tr>
+        <tr v-for="sec of byName">
+            <td class=center>{{sec.crn}}</td>
+            <td class=center>{{sec.id}}</td>
+            <td class=center>{{sec.sec}}</td>
+            <td>{{sec.title}}</td>
+            <td class=center>{{sec.meetings.days}}</td>
+            <td class=center>{{sec.times}}</td>
+            <td class=center>{{sec.mode}}</td>
+            <td class=center>{{sec.instructor}}</td>
+            <td class=center>{{sec.credits}}</td>
+            <td class=center>{{sec.enrollment.maximum_enrollment}}</td>
+            <td class=center>{{sec.enrollment.seats_available}}</td>
+            <td class=center>{{sec.course_dates.begin_date}}</td>
+            <td class=center>{{sec.course_dates.end_date}}</td>
+
+        </tr>
+    </table>    
+    
+    </div>
+    <footer>
+      <hr />
+      <p>This is the footer</p>
+    </footer>
+    <script src="./app.js"></script>
+  </body>
+</html>
