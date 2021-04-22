@@ -17,13 +17,14 @@ const app = Vue.createApp({
 
     computed: {
       bypicked: function () {
+
         return this.sections.filter(name => 
-        name.title.toLowerCase().includes(this.pickedtitlelower) 
-        && name.crn.includes(this.pickedcrn) 
-        && name.dept.includes(this.department));
+        name.title.toLowerCase().includes(this.pickedtitlelower)&&  
+        name.crn.includes(this.pickedcrn) && 
+        name.dept.includes(this.department));
         
-      },
-      
+        
+      },    
     },
 
     mounted() {
@@ -40,18 +41,19 @@ const app = Vue.createApp({
           console.log(err);
         });
 
-        fetch("./departments.json")
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          console.log(data);
-          this.sections = data;
-          return data;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+        // fetch("./departments.json")
+        // .then((response) => {
+        //   return response.json();
+        // })
+
+        // .then((data) => {
+        //   console.log(data);
+        //   this.sections = data;
+        //   return data;
+        // })
+        // .catch((err) => {
+        //   console.log(err);
+        // });
 
 
         
