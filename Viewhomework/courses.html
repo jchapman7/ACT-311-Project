@@ -24,14 +24,40 @@
     </style>
   </head>
   <body>
-    <h1>Courses by title</h1>
+    <h1>MWSU Courses Fall 21</h1>
     <hr />
     <div id="appArea">
     <div>
-        <label>Type a Title:</label>
-        <p><button onclick="bytitle()">Sort by Title</button></p>
-        <input type="text" v-model="picked" v-on:input="lower">
-        "{{ picked }}" 
+        <label>CRN: </label>
+        <input type="text" v-model="pickedcrn">
+
+
+      <select name="Department" id="Department"v-model=department>
+        
+        <option value="">All Departments</option>
+        <option value="AF">Academic Affairs</option>
+        <option value="BIO">Biology</option>
+        <option value="BUS">Business</option>
+        <option value="CHE">Chemistry</option>
+        <option value="COM">Communication</option>
+        <option value="CSMP">Comp Science, Math & Physics</option>
+        <option value="CJLG">Crim Justice & Legal Studies</option>
+        <option value="EDU">Education</option>
+        <option value="ET">Engineering Technology</option>
+        <option value="FIN">Fine Arts</option>
+        <option value="HP">Health Professions</option>
+        <option value="HON">Honors Program</option>
+        <option value="MIL">Military Science</option>
+        <option value="NURS">Nursing</option>
+        <option value="PSY">Psychology</option>
+        <option value="SSH">Social Sciences & Humanities</option>
+        <option value="CON">Western Institute</option>
+      </select>
+        
+        <label>Title: </label>
+        <input type="text" v-model="pickedtitle" v-on:input="lower">
+        
+         
     </div>
     <table>
         <tr>
@@ -49,13 +75,13 @@
             <th>Begin Date</th>
             <th>End Date</th>
         </tr>
-        <tr v-for="sec of byName">
+        <tr v-for="sec of bypicked">
             <td class=center>{{sec.crn}}</td>
             <td class=center>{{sec.id}}</td>
             <td class=center>{{sec.sec}}</td>
-            <td>{{sec.title}}</td>
-            <td class=center>{{sec.meetings.days}}</td>
-            <td class=center>{{sec.times}}</td>
+            <td>{{sec.title}}</td> 
+            <td class=center>{{sec.meetings[0].day}}</td>
+            <td class=center>{{sec.meetings[0].time}}</td>
             <td class=center>{{sec.mode}}</td>
             <td class=center>{{sec.instructor}}</td>
             <td class=center>{{sec.credits}}</td>

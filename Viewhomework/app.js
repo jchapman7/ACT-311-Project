@@ -2,21 +2,28 @@ const app = Vue.createApp({
     data: function () {
       return {
        sections:[],
-       picked : "",
-       pickedlower : "",
+       pickedcrn: "",
+       pickedtitle : "",
+       pickedtitlelower : "",
+       department : "",
       };
     },
     methods: {
       lower: function(){
-        this.pickedlower = this.picked.toLowerCase().trim();
+        this.pickedtitlelower = this.pickedtitle.toLowerCase().trim();
       },
+      
     },
 
     computed: {
-      byName: function bytitle() {
-        return this.sections.filter(name => name.discipline.toLowerCase().includes(this.pickedlower));
-
+      bypicked: function () {
+        return this.sections.filter(name => 
+        name.title.toLowerCase().includes(this.pickedtitlelower) 
+        && name.crn.includes(this.pickedcrn) 
+        && name.dept.includes(this.department));
+        
       },
+      
     },
 
     mounted() {
@@ -32,6 +39,22 @@ const app = Vue.createApp({
         .catch((err) => {
           console.log(err);
         });
+
+        fetch("./departments.json")
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          this.sections = data;
+          return data;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+
+        
     },
   });
   app.mount("#appArea");
