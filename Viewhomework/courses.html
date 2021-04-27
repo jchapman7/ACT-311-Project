@@ -28,12 +28,7 @@
     <hr />
     <div id="appArea">
     <div>
-        <label>CRN: </label>
-        <input type="text" v-model="pickedcrn">
-
-
-      <select name="Department" id="Department"v-model=department>
-        
+      <select name="Department" id="Department"v-model=pickeddepartment>
         <option value="">All Departments</option>
         <option value="AF">Academic Affairs</option>
         <option value="BIO">Biology</option>
@@ -52,10 +47,112 @@
         <option value="PSY">Psychology</option>
         <option value="SSH">Social Sciences & Humanities</option>
         <option value="CON">Western Institute</option>
-      </select>
+        </select>
+
+        <select name="Discipline" id="Discipline"v-model=pickeddiscipline>
         
+        <option value="">All Subjects</option>
+        <option value="ACC">Accounting</option>
+        <option value="ALH">Allied Health</option>
+        <option value="ACT">Applications of Computer Tech</option>
+        <option value="MAS">Applied Science</option>
+        <option value="ART">Art</option>
+        <option value="BIO">Biology</option>
+        <option value="CHE">Chemistry</option>
+        <option value="CIN">Cinema</option>
+        <option value="CLS">Clinical Laboratory Science</option>
+        <option value="COM">Communication Studies</option>
+        <option value="CSC">Computer Science</option>
+        <option value="CET">Construction Engineering Tech</option>
+        <option value="CED">Continuing Education   (WI)</option>
+        <option value="CRJ">Criminal Justice</option>
+        <option value="ESC">Earth Science</option>
+        <option value="ECO">Economics</option>
+        <option value="EDU">Education</option>
+        <option value="EGT">Engineering Technology</option>
+        <option value="ENG">English</option>
+        <option value="ETC">English Technical Communication</option>
+        <option value="ENT">Entrepreneurship</option>
+        <option value="FIN">Finance</option>
+        <option value="GBA">General Business</option>
+        <option value="GEO">Geography</option>
+        <option value="HDA">Health Data Analytics</option>
+        <option value="HIF">Health Information Management</option>
+        <option value="HIS">History</option>
+        <option value="HON">Honors Program</option>
+        <option value="HUM">Humanities</option>
+        <option value="MIM">Information Management</option>
+        <option value="JOU">Journalism</option>
+        <option value="LAT">Legal Assistant</option>
+        <option value="MGT">Management</option>
+        <option value="MET">Manufacturing Engineering Tech</option>
+        <option value="MKT">Marketing</option>
+        <option value="MAT">Mathematics</option>
+        <option value="MTE">Medical Technology</option>
+        <option value="MIL">Military Science</option>
+        <option value="MUS">Music</option>
+        <option value="NUR">Nursing</option>
+        <option value="PHL">Philosophy</option>
+        <option value="PED">Physical Education</option>
+        <option value="PTA">Physical Therapist Assistant</option>
+        <option value="PHY">Physics</option>
+        <option value="POL">Policing</option>
+        <option value="PSC">Political Science</option>
+        <option value="PSY">Psychology</option>
+        <option value="RDG">Reading</option>
+        <option value="RSM">Recreation Sport Management</option>
+        <option value="SWK">Social Work</option>
+        <option value="SOC">Sociology</option>
+        <option value="SFM">Sport and Fitness Management</option>
+        <option value="SCM">Supply Chain Management</option>
+        <option value="TSL">Teaching Second Language</option>
+        <option value="THR">Theatre</option>
+        <option value="UNV">University Orientation</option>
+        </select>
+
+        <select name="Day" id="Day"v-model=pickedday>
+          <option value="">Any Day</option>
+          <option value="M">Mondays</option>
+          <option value="T">Tuesdays</option>
+          <option value="W">Wednesdays</option>
+          <option value="R">Thurdays</option>
+          <option value="MW">Mondays and Wednesdays</option>
+          <option value="TR">Tuesdays And Thursdays</option>
+          
+        </select>
+
+        <select name="Format" id="Format"v-model=pickedformat>
+          <option value="">Any Fromat</option>
+          <option value="100% Online">100% Online</option>
+          <option value="Classroom w/Online Component">Classroom w/Online Component</option>
+          <option value="Lecture, 100% in Classroom">Lecture, 100% in Classroom</option>
+          <option value="Lab">Lab</option>
+          <option value="Independent Research">Independent Research</option>
+          <option value="Independent Study">Independent Study</option>
+          <option value="Intern/Pract/Field Exp/Seminar">Intern/Pract/Field Exp/Seminar</option>
+          <option value="Music Lessons/Ensemble">Music Lessons/Ensemble</option>
+          
+        </select>
+
+
+
+        <label>CRN: </label>
+        <input type="text" v-model="pickedcrn">
+
+        <label>Course ID: </label>
+        <input type="text" v-model="pickedid" v-on:input="lower">
+        
+
         <label>Title: </label>
         <input type="text" v-model="pickedtitle" v-on:input="lower">
+        <label>Instructor: </label>
+        <input type="text" v-model="pickedinstructor" v-on:input="lower">
+
+        
+
+        
+        
+        
         
          
     </div>

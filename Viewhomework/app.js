@@ -3,14 +3,27 @@ const app = Vue.createApp({
       return {
        sections:[],
        pickedcrn: "",
+       pickedid: "",
+       pickedidlower: "",
        pickedtitle : "",
+       pickedinstructor : "",
+       pickedinstructorlower: "",
+       pickedday: "",
        pickedtitlelower : "",
-       department : "",
+       pickeddepartment : "",
+       pickeddiscipline : "",
+       pickedformat : "",
       };
     },
     methods: {
       lower: function(){
         this.pickedtitlelower = this.pickedtitle.toLowerCase().trim();
+      },
+      lower: function(){
+        this.pickedidlower = this.pickedid.toLowerCase().trim();
+      },
+      lower: function(){
+        this.pickedinstructorlower = this.pickedinstructor.toLowerCase().trim();
       },
       
     },
@@ -19,9 +32,15 @@ const app = Vue.createApp({
       bypicked: function () {
 
         return this.sections.filter(name => 
-        name.title.toLowerCase().includes(this.pickedtitlelower)&&  
         name.crn.includes(this.pickedcrn) && 
-        name.dept.includes(this.department));
+        name.id.toLowerCase().includes(this.pickedidlower)&&  
+        name.title.toLowerCase().includes(this.pickedtitlelower)&& 
+        name.instructor.toLowerCase().includes(this.pickedinstructorlower)&&
+        name.meetings[0].day.includes (this.pickedday) &&
+        name.dept.includes(this.pickeddepartment) &&
+        name.mode.includes(this.pickedformat) &&
+        name.discipline.includes(this.pickeddiscipline)
+        );
         
         
       },    
