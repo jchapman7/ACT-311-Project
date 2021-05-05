@@ -166,34 +166,34 @@
       <!-- style="position:fixed" will allow for the top row to follow you as 
       you scroll down the page  -->
       <div class="row border sticky-top text-warning bg-dark" >
-        <div class="col-sm border">CRN</div>
-        <div class="col-sm border">Course</div>
-        <div class="col-sm border">Section</div>
-        <div class="col-sm border">Title</div>
-        <div class="col-sm border">Day</div>
-        <div class="col-sm border">Time</div>
-        <div class="col-sm border">Format</div>
-        <div class="col-sm border">Instructor</div>
-        <div class="col-sm border">Credit Hours</div>
-        <div class="col-sm border">Max Enrollment</div>
-        <div class="col-sm border">Seats Available</div>
-        <div class="col-sm border">Begin Date</div>
-        <div class="col-sm border">End Date</div>
+        <div class="col-sm text-sm-center border">CRN</div>
+        <div class="col-sm text-sm-center border">Course</div>
+        <div class="col-sm text-sm-center border">Section</div>
+        <div class="col-sm text-sm-center border">Title</div>
+        <div class="col-sm text-sm-center border">Day</div>
+        <div class="col-sm text-sm-center border">Time</div>
+        <div class="col-sm text-sm-center border">Format</div>
+        <div class="col-sm text-sm-center border">Instructor</div>
+        <div class="col-sm text-sm-center border">Credit Hours</div>
+        <div class="col-sm text-sm-center border">Max Enrollment</div>
+        <div class="col-sm text-sm-center border">Seats Available</div>
+        <div class="col-sm text-sm-center border">Begin Date</div>
+        <div class="col-sm text-sm-center border">End Date</div>
       </div>
       <div class="row border" v-for="sec of bypicked">
-        <div class="col-sm border">{{sec.crn}}</div>
-        <div class="col-sm border">{{sec.id}}</div>
-        <div class="col-sm border">{{sec.sec}}</div>
-        <div class="col-sm border">{{sec.title}}</div>
-        <div class="col-sm border">{{sec.meetings[0].day}}</div>
-        <div class="col-sm border">{{sec.meetings[0].time}}</div>
-        <div class="col-sm border">{{sec.mode}}</div>
-        <div class="col-sm border">{{sec.instructor}}</div>
-        <div class="col-sm border">{{sec.credits}}</div>
-        <div class="col-sm border">{{sec.enrollment.maximum_enrollment}}</div>
-        <div class="col-sm border">{{sec.enrollment.seats_available}}</div>
-        <div class="col-sm border">{{sec.course_dates.begin_date}}</div>
-        <div class="col-sm border">{{sec.course_dates.end_date}}</div>
+        <div class="col-sm text-sm-center border">{{sec.crn}}</div>
+        <div class="col-sm text-sm-center border">{{sec.id}}</div>
+        <div class="col-sm text-sm-center border">{{sec.sec}}</div>
+        <div class="col-sm text-sm-center border">{{sec.title}}</div>
+        <div class="col-sm text-sm-center border">{{sec.meetings[0].day}}</div>
+        <div class="col-sm text-sm-center border">{{sec.meetings[0].time}}</div>
+        <div class="col-sm text-sm-center border">{{sec.mode}}</div>
+        <div class="col-sm text-sm-center border">{{sec.instructor}}</div>
+        <div class="col-sm text-sm-center border">{{sec.credits}}</div>
+        <div class="col-sm text-sm-center border">{{sec.enrollment.maximum_enrollment}}</div>
+        <div class="col-sm text-sm-center border">{{sec.enrollment.seats_available}}</div>
+        <div class="col-sm text-sm-center border">{{sec.course_dates.begin_date}}</div>
+        <div class="col-sm text-sm-center border">{{sec.course_dates.end_date}}</div>
       </div>
     </div>
     <!-- <table>
