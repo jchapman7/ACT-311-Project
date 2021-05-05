@@ -162,11 +162,11 @@
     </div>
 
     <!-- Adding a bootstrap grid? -->
-    <div class="border">
+    <div class="bg-dark border">
       <!-- style="position:fixed" will allow for the top row to follow you as 
       you scroll down the page  -->
       <div class="row border sticky-top text-warning bg-dark" >
-        <div class="col-sm text-sm-center border">CRN</div>
+        <div class="text-info col-sm text-sm-center border">CRN</div>
         <div class="col-sm text-sm-center border">Course</div>
         <div class="col-sm text-sm-center border">Section</div>
         <div class="col-sm text-sm-center border">Title</div>
@@ -177,11 +177,11 @@
         <div class="col-sm text-sm-center border">Credit Hours</div>
         <div class="col-sm text-sm-center border">Max Enrollment</div>
         <div class="col-sm text-sm-center border">Seats Available</div>
-        <div class="col-sm text-sm-center border">Begin Date</div>
-        <div class="col-sm text-sm-center border">End Date</div>
+        <div class="text-danger col-sm text-sm-center border">Begin Date</div>
+        <div class="text-danger col-sm text-sm-center border">End Date</div>
       </div>
       <div class="row border" v-for="sec of bypicked">
-        <div class="col-sm text-sm-center border">{{sec.crn}}</div>
+        <div class="text-info col-sm text-sm-center border">{{sec.crn}}</div>
         <div class="col-sm text-sm-center border">{{sec.id}}</div>
         <div class="col-sm text-sm-center border">{{sec.sec}}</div>
         <div class="col-sm text-sm-center border">{{sec.title}}</div>
@@ -192,8 +192,8 @@
         <div class="col-sm text-sm-center border">{{sec.credits}}</div>
         <div class="col-sm text-sm-center border">{{sec.enrollment.maximum_enrollment}}</div>
         <div class="col-sm text-sm-center border">{{sec.enrollment.seats_available}}</div>
-        <div class="col-sm text-sm-center border">{{sec.course_dates.begin_date}}</div>
-        <div class="col-sm text-sm-center border">{{sec.course_dates.end_date}}</div>
+        <div class="text-danger col-sm text-sm-center border">{{sec.course_dates.begin_date}}</div>
+        <div class="text-danger col-sm text-sm-center border">{{sec.course_dates.end_date}}</div>
       </div>
     </div>
     <!-- <table>
